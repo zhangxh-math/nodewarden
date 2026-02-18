@@ -10,17 +10,25 @@ A **Bitwarden-compatible** server that runs on **Cloudflare Workers**.
 
 ---
 
-## Features
+## Feature Comparison Table (vs Official Bitwarden Server)
 
-- ✅ **Completely free, no server deployment needed. Thanks again to the generous sponsor!**
-- ✅ Data storage on Cloudflare D1 (SQLite)
-- ✅ Full support for logins, notes, cards, and identities
-- ✅ Folders and favorites
-- ✅ Attachments (Cloudflare R2)
-- ✅ Import / export
-- ✅ Website icons
-- ✅ End-to-end encryption (the server can’t see plaintext)
-- ✅ Seamless updates, zero downtime
+| Capability | Bitwarden  | NodeWarden | Notes |
+|---|---|---|---|
+| Single-user vault (logins/notes/cards/identities) | ✅ | ✅ | Core vault model supported |
+| Folders / Favorites | ✅ | ✅ | Common vault organization supported |
+| Full sync `/api/sync` | ✅ | ✅ | Compatibility-focused implementation |
+| Attachment upload/download | ✅ | ✅ | Backed by Cloudflare R2 |
+| Import flow (common clients) | ✅ | ✅ | Common import paths covered |
+| Website icon proxy | ✅ | ✅ | Via `/icons/{hostname}/icon.png` |
+| Multi-user | ✅ | ❌ | NodeWarden is single-user by design |
+| Organizations / Collections / Member roles | ✅ | ❌ | Not necessary to implement |
+| Full 2FA (TOTP/WebAuthn/Duo/Email) | ✅ | ❌ | Not necessary to implement |
+| SSO / SCIM / Enterprise directory | ✅ | ❌ | Not necessary to implement |
+| Send | ✅ | ❌ | Not necessary to implement |
+| Emergency access | ✅ | ❌ | Not necessary to implement |
+| Admin console / Billing & subscription | ✅ | ❌ | Free only |
+| Full push notification pipeline | ✅ | ❌ | Not necessary to implement |
+
 
 ## Tested clients / platforms
 
@@ -78,3 +86,6 @@ LGPL-3.0 License
 - [Bitwarden](https://bitwarden.com/) - original design and clients
 - [Vaultwarden](https://github.com/dani-garcia/vaultwarden) - server implementation reference
 - [Cloudflare Workers](https://workers.cloudflare.com/) - serverless platform
+
+
+

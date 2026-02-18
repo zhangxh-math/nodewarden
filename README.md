@@ -8,21 +8,29 @@ English：[`README_EN.md`](./README_EN.md)
 > 本项目与 Bitwarden 官方无关，请勿向 Bitwarden 官方反馈问题。
 
 ---
+## 与 Bitwarden 官方服务端能力对比
 
-## 特性
-- ✅ **完全免费，不需要在服务器上部署，再次感谢大善人！**
-- ✅ 数据存储基于 Cloudflare D1（SQLite）
-- ✅ 完整的密码、笔记、卡片、身份信息管理
-- ✅ 文件夹和收藏功能
-- ✅ 文件附件支持（基于 R2 存储）
-- ✅ 导入/导出功能
-- ✅ 网站图标获取
-- ✅ 端到端加密（服务器无法查看明文）
-- ✅ 无感更新，零停机
+| 能力项 | Bitwarden  | NodeWarden | 说明 |
+|---|---|---|---|
+| 单用户保管库（登录/笔记/卡片/身份） | ✅ | ✅ | 基于Cloudflare D1 |
+| 文件夹 / 收藏 | ✅ | ✅ | 常用管理能力可用 |
+| 全量同步 `/api/sync` | ✅ | ✅ | 已做兼容与性能优化 |
+| 附件上传/下载 | ✅ | ✅ | 基于 Cloudflare R2 |
+| 导入功能 | ✅ | ✅ | 覆盖常见导入路径 |
+| 网站图标代理 | ✅ | ✅ | 通过 `/icons/{hostname}/icon.png` |
+| 多用户 | ✅ | ❌ | NodeWarden 定位单用户 |
+| 组织/集合/成员权限 | ✅ | ❌ | 没必要实现 |
+| 完整 2FA（TOTP/WebAuthn/Duo/Email） | ✅ | ❌ | 没必要实现 |
+| SSO / SCIM / 企业目录 | ✅ | ❌ | 没必要实现 |
+| Send | ✅ | ❌ | 基本没人用 |
+| 紧急访问 | ✅ | ❌ | 没必要实现 |
+| 管理后台 / 计费订阅 | ✅ | ❌ | 纯免费 |
+| 推送通知完整链路 | ✅ | ❌ | 没必要实现 |
 
 ## 测试情况：
+
 - ✅ Windows 客户端（v2026.1.0）
-- ✅ Android App（v2026.1.0）
+- ✅ 手机 App（v2026.1.0）
 - ✅ 浏览器扩展（v2026.1.0）
 - ⬜ macOS 客户端（未测试）
 - ⬜ Linux 客户端（未测试）
@@ -75,3 +83,4 @@ LGPL-3.0 License
 - [Bitwarden](https://bitwarden.com/) - 原始设计和客户端
 - [Vaultwarden](https://github.com/dani-garcia/vaultwarden) - 服务器实现参考
 - [Cloudflare Workers](https://workers.cloudflare.com/) - 无服务器平台
+
